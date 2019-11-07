@@ -1,0 +1,10 @@
+<button bindtap="print">123321</button>
+<view class="lessonShow" wx:for="{{recommonditions}}" wx:key="index">
+  <image src="{{item.icon}}"></image>
+  <view class="lessonInfo">
+    <text class="showTitle">{{item.dec}}\n</text>
+    <text class="showTeacher">{{item.teacher}}\n</text>
+    <text class="studied">已有{{item.studied}}人学习过</text>
+  </view>
+  <button class="learnnow" bindtap="goDetail" data-text="{{item.videoCode}}">立即学习</button>
+</view>

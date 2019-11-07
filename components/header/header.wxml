@@ -1,0 +1,3 @@
+<view class="headerpic">
+  <image mode="aspectFit" class="headerimage" src="../../static/images/header.png" />
+</view>

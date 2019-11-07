@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/wishes/wishes",
+    "pages/mine/mine",
+    "pages/auth/auth",
+    "pages/security/security",
+    "pages/details/details",
+    "pages/search-res/search-res",
+    "pages/shopping-cart/shopping-cart"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "芮米在线",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color":"#444444",
+    "selectedColor": "#009900",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "index",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "search",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/wishes/wishes",
+        "text": "wishes",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "mine" ,
+        "iconPath": "",
+        "selectedIconPath": ""
+      }
+    ]
+  }
+}

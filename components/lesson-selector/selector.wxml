@@ -1,0 +1,7 @@
+<!--components/lesson-selector/selector.wxml-->
+<view class="lessonSelector">
+  <view class="lessonItem" wx:for="{{lessons}}" wx:key="index" bindtap="searchhotkeysSel" data-text="{{item.lesson}}">
+    <image class="lessonImage" src="{{item.icon}}" />
+    <text class="lessonName">{{item.lesson}}</text>
+  </view>
+</view>

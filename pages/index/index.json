@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "main-header": "../../components/header/header",
+    "lessonSelector": "../../components/lesson-selector/selector",
+    "lessonShow": "../../components/lesson-show/lessonShow",
+    "primer": "../../components/primer/primer"
+  }
+}

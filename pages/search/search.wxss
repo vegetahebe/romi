@@ -1,0 +1,55 @@
+/* pages/search/search.wxss */
+/* pages/security/security.wxss */
+.container {
+    overflow: hidden;
+}
+
+/* 搜索栏 */
+.search-box {
+    width: 95%;
+    height: 90rpx;
+    margin: 20rpx auto;
+    border: 2rpx solid #eee;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 15rpx;
+
+}
+
+.search-box image {
+    width: 50rpx;
+    height: 50rpx;
+    opacity: 0.6;
+}
+
+.search-box input {
+    width: calc(100% - 50rpx);
+    height: inherit;
+    /* 设置光标颜色 */
+    caret-color: #090;
+    font-size: .85rem;
+}
+
+/* 热词 */
+.hots {
+    width: 80%;
+    margin:  0 auto 30rpx  auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hotkeys {
+    width: 32%;
+    margin-bottom: 3%;
+    line-height: 30px;
+    background: #e1e1e1;
+    color: #fff;
+    border-radius: 34rpx;
+    text-align: center;
+    font-size:12px;
+    letter-spacing: 4rpx;
+}
+.hotkeys:not(:nth-child(3n)) {
+    margin-right: 2%;
+}

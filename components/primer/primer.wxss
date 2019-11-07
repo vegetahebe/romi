@@ -1,0 +1,7 @@
+/* components/primer/primer.wxss */
+
+.banner {
+  width: 375px;
+  height: 40px;
+  display: block;
+}

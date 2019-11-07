@@ -1,0 +1,14 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <image src="../../static/images/search.png"></image>
+    <input type="text" placeholder="输入搜索内容" placeholder-style="color:444444" confirm-type="search" bindconfirm="searchhotkeys"></input>
+  </view>
+  <view class="hots">
+    <view class="hotkeys" data-text="{{item}}" wx:for="{{hotkeys}}" wx:key="{{index}}" bindtap="searchhotkeys">
+      {{item}}
+    </view>
+  </view>
+  <lessonShow />
+</view>

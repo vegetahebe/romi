@@ -1,0 +1,2 @@
+<!--components/primer/primer.wxml-->
+<image class="banner" src="/static/images/banner.png" bindtap="goHotlesson"></image>

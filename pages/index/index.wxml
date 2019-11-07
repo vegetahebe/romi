@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <main-header />
+  <lessonSelector />
+  <primer />
+  <view class="videoTitle">
+    <text class="videoTitle1">| 精品课程</text>
+    <text class="videoTitle2">更多...</text>
+  </view>
+  <view>
+    <lessonShow recommonditions='{{recommonditions}}' />
+  </view>
+</view>

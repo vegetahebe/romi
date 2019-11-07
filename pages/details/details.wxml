@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- 视频组件 -->
+  <video id="myVideo" src="{{videoUrl}}" bindtimeupdate="bindtimeupdate">
+  </video>
+  <!-- 提醒购买 -->
+  <view wx:if="{{!videoPaied}}">未购买视频,可以试看1分钟</view>
+  <!-- 弹框组件 -->
+  <mp-dialog title="您还未购买此课程" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view>快加入我们的学习行列吧</view>
+  </mp-dialog>
+</view>
+<!-- 简介 -->
+<view>
+  <text bindtap="toggleProfilecomment">简介</text>
+  <text bindtap="toggleProfilecomment">评论</text>
+</view>
+<view class="profile" wx:if="{{profileComment}}">{{videoProfile}}</view>
+<view class="comment" wx:if="{{!profileComment}}">{{videoComment}}</view>
+<primer />
+<view>相关视频</view>
+<lessonshow data-videos="{{recommonditions}}" />
