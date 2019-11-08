@@ -16,4 +16,14 @@ header {
 .headerimage {
   width: 375px;
   height: 160px;
+  position: relative;
+}
+.romiLOGO{
+  position: absolute;
+ top: 40px;
+left: 30px;
+height: 20px;
+width: 100px;
+
+
 }

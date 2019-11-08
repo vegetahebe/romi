@@ -20,32 +20,32 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color":"#444444",
-    "selectedColor": "#009900",
+    "selectedColor": "#4700b8",
     "backgroundColor": "#f5f5f5",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "index",
+        "text": "主页",
         "iconPath": "/static/images/indexicon.png",
-        "selectedIconPath": ""
+        "selectedIconPath": "/static/images/indexicon1.png"
       },
       {
         "pagePath": "pages/search/search",
-        "text": "search",
+        "text": "搜索",
         "iconPath": "/static/images/searchicon.png",
-        "selectedIconPath": ""
+        "selectedIconPath": "/static/images/searchicon1.png"
       },
       {
         "pagePath": "pages/wishes/wishes",
-        "text": "wishes",
+        "text": "我的视频",
         "iconPath": "/static/images/myVideoicon.png",
-        "selectedIconPath": ""
+        "selectedIconPath": "/static/images/myVideoicon1.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "mine" ,
+        "text": "个人中心" ,
         "iconPath": "/static/images/mineicon.png",
-        "selectedIconPath": ""
+        "selectedIconPath": "/static/images/mineicon1.png"
       }
     ]
   }

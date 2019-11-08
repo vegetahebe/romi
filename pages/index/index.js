@@ -6,23 +6,41 @@ Page({
   data: {
     recommenditions: [{
       name: "HTML",
-      dec: "HTML5全栈进阶视频教程",
-      teacher: "陈林",
-      studied: 25858,
-      icon: "../../static/images/lessonHTML.png",
+      lessonname: "HTML5全栈进阶视频教程",
+      lessonteacher: "陈林",
+      lessonstudied: 25858,
+      lessonicon: "../../static/images/lessonHTML.png",
       price: 1500,
       videoUrl: "/static/video/Ka98k.mp4",
       videoCode: "Ka98k"
     }, {
       name: "JAVA",
-      dec: "HTML5全栈进阶视频教程",
-      teacher: "陈林",
-      studied: 25858,
-      icon: "../../static/images/lessonHTML.png",
+      lessonname: "JAVA高级视频课程",
+      lessonteacher: "许文强",
+      lessonstudied: 25858,
+      lessonicon: "../../static/images/lessonJAVA.png",
       price: 1500,
       videoUrl: "/static/video/M24.mp4",
       videoCode: "M24"
-    }],
+      }, {
+        name: "UI",
+        lessonname: "UI/UE从入门到精通",
+        lessonteacher: "海燕",
+        lessonstudied: 48503,
+        lessonicon: "../../static/images/lessonUI.png",
+        price: 1500,
+        videoUrl: "/static/video/M24.mp4",
+        videoCode: "M24"
+      }, {
+        name: "PYTHON",
+        lessonname: "PYTHON实战经验大解析",
+        lessonteacher: "云兵",
+        lessonstudied: 12325,
+        lessonicon: "../../static/images/lessonPYTHON.png",
+        price: 1500,
+        videoUrl: "/static/video/M24.mp4",
+        videoCode: "M24"
+      }],
   },
   onLaunch: function() {
     let _this = this;
