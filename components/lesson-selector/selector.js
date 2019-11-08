@@ -39,7 +39,7 @@ Component({
         icon: "../../static/images/python.png"
       },
       {
-        lesson: "更多",
+        lesson: "搜索",
         icon: "../../static/images/more.png"
       },
     ]

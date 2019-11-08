@@ -8,7 +8,8 @@
     "pages/security/security",
     "pages/details/details",
     "pages/search-res/search-res",
-    "pages/shopping-cart/shopping-cart"
+    "pages/shopping-cart/shopping-cart",
+    "pages/buied/buied"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,25 +26,25 @@
       {
         "pagePath": "pages/index/index",
         "text": "index",
-        "iconPath": "",
+        "iconPath": "/static/images/indexicon.png",
         "selectedIconPath": ""
       },
       {
         "pagePath": "pages/search/search",
         "text": "search",
-        "iconPath": "",
+        "iconPath": "/static/images/searchicon.png",
         "selectedIconPath": ""
       },
       {
         "pagePath": "pages/wishes/wishes",
         "text": "wishes",
-        "iconPath": "",
+        "iconPath": "/static/images/myVideoicon.png",
         "selectedIconPath": ""
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "mine" ,
-        "iconPath": "",
+        "iconPath": "/static/images/mineicon.png",
         "selectedIconPath": ""
       }
     ]

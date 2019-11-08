@@ -15,7 +15,12 @@
   <text bindtap="toggleProfilecomment">评论</text>
 </view>
 <view class="profile" wx:if="{{profileComment}}">{{videoProfile}}</view>
-<view class="comment" wx:if="{{!profileComment}}">{{videoComment}}</view>
+<view class="comment" wx:if="{{!profileComment}}" wx:for="{{videoComment}}">
+<image src="{{item.usericon}}"></image>
+<view>{{item.username}}</view>
+<view>{{item.commentcontent}}</view>
+<view>{{item.time}}</view>
+</view>
 <primer />
 <view>相关视频</view>
 <lessonshow data-videos="{{recommonditions}}" />

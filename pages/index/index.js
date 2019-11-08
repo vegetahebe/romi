@@ -14,7 +14,7 @@ Page({
       videoUrl: "/static/video/Ka98k.mp4",
       videoCode: "Ka98k"
     }, {
-      name: "HTML",
+      name: "JAVA",
       dec: "HTML5全栈进阶视频教程",
       teacher: "陈林",
       studied: 25858,

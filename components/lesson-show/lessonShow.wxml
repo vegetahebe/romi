@@ -1,5 +1,4 @@
-<button bindtap="print">123321</button>
-<view class="lessonShow" wx:for="{{recommonditions}}" wx:key="index">
+<view class="lessonShow" wx:for="{{recommonditions}}" wx:key="{{index}}">
   <image src="{{item.icon}}"></image>
   <view class="lessonInfo">
     <text class="showTitle">{{item.dec}}\n</text>

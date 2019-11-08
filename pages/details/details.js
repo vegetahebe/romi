@@ -9,12 +9,24 @@ Page({
     videoCode: '98k',
     videoUrl: '',
     videoProfile: '这是一个UI视频:',
-    videoComment: '视频可以',
-    videoTeacher: '陈林',
-    videoTeacherinfo: "拥有7年研发经验,4年教学经验,熟悉排版设计及包装设计",
+    videoComment: [{
+      username: "李二狗",
+      time: "2019-09-09",
+      usericon: "",
+      commentcontent: "'视频可以"
+    }, {
+      username: "李二狗",
+      time: "2019-09-09",
+      usericon: "",
+      commentcontent: "'视频可以"
+    }],
+    videoTeacher: {
+      teachername: "陈林",
+      teacherinfo: "拥有7年研发经验,4年教学经验,熟悉排版设计及包装设计"
+    },
     videoPlayed: 25550,
     videoPaied: false,
-    videoSection: "1,2,3",
+    videoSection: "1,2",
     //弹框属性
     dialogShow: false,
     buttons: [{
@@ -35,15 +47,15 @@ Page({
       videoUrl: "/static/video/Ka98k.mp4",
       videoCode: "Ka98k"
     }, {
-        name: "HTML",
-        dec: "HTML5全栈进阶视频教程",
-        teacher: "陈林",
-        studied: 25858,
-        icon: "../../static/images/lessonHTML.png",
-        price: 1500,
-        videoUrl: "/static/video/M24.mp4",
-        videoCode: "M24"
-      }],
+      name: "HTML",
+      dec: "HTML5全栈进阶视频教程",
+      teacher: "陈林",
+      studied: 25858,
+      icon: "../../static/images/lessonHTML.png",
+      price: 1500,
+      videoUrl: "/static/video/M24.mp4",
+      videoCode: "M24"
+    }],
   },
   //限时视频弹框 方法
   openConfirm: function() {

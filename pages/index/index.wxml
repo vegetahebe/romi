@@ -7,7 +7,6 @@
     <text class="videoTitle1">| 精品课程</text>
     <text class="videoTitle2">更多...</text>
   </view>
-  <view>
-    <lessonShow recommonditions='{{recommonditions}}' />
-  </view>
+    <lessonShow recommonditions='{{recommenditions}}' />
+    <lessonShow2 />
 </view>

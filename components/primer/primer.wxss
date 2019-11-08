@@ -1,7 +1,11 @@
 /* components/primer/primer.wxss */
 
 .banner {
-  width: 375px;
+  width: 100%;
   height: 40px;
   display: block;
+}
+
+primer {
+  width: 100%;
 }

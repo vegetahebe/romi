@@ -4,6 +4,7 @@
     "main-header": "../../components/header/header",
     "lessonSelector": "../../components/lesson-selector/selector",
     "lessonShow": "../../components/lesson-show/lessonShow",
-    "primer": "../../components/primer/primer"
+    "primer": "../../components/primer/primer",
+    "lessonShow2":"../../components/lesson-show2/lessonShow2"
   }
 }

@@ -6,6 +6,7 @@ Component({
   properties: {
     recommonditions:{
       type:Array,
+      value:[]
     }
   },
 
