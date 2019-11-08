@@ -1,1 +1,7 @@
 /* pages/search-res/search-res.wxss */
+Page{
+  background-color:grey;
+}
+lessonshow{
+  
+}

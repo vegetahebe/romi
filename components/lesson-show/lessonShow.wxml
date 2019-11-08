@@ -1,4 +1,4 @@
-<view class="lessonShow" wx:for="{{recommonditions}}" wx:key="{{index}}">
+<view class="lessonShow" wx:for="{{showitems}}" wx:key="{{index}}">
   <image src="{{item.lessonicon}}"></image>
   <view class="lessonInfo">
     <text class="showTitle">{{item.lessonname}}\n</text>

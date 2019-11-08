@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hotkeys: ["Java", "HTML", "IOS", "UI", "WEB", "Python"]
+    hotkeys: ["Java", "HTML", "IOS", "UI", "WEB", "Python"],
+    swiperImages: ["/static/images/swiperImage1.png", "/static/images/swiperImage2.png", "/static/images/swiperImage3.png", "/static/images/swiperImage4.png"]
   },
 
   searchhotkeys: function(event) {

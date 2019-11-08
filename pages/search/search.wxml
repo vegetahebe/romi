@@ -2,7 +2,7 @@
 <view class="container">
   <!-- 搜索框 -->
   <view class="search-box">
-    <image src="../../static/images/search.png"></image>
+    <!-- <image src="../../static/images/search.png"></image> -->
     <input type="text" placeholder="输入搜索内容" placeholder-style="color:444444" confirm-type="search" bindconfirm="searchhotkeys"></input>
   </view>
   <view class="hots">
@@ -11,4 +11,11 @@
     </view>
   </view>
   <lessonShow />
+  <swiper indicator-dots="true" autoplay="true" interval="4000" duration="500" circular="true" >
+    <block wx:for="{{swiperImages}}" wx:key="key">
+      <swiper-item>
+        <image class= "swiper-item" src='{{item}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>

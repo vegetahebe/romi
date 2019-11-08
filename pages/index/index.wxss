@@ -4,12 +4,11 @@
   margin: 0;
   padding: 0;
   background: #eee;
- 
 }
 
-primer{
+primer {
   position: relative;
-  top:-30px;
+  top: -30px;
 }
 
 .videoTitle {
@@ -17,7 +16,7 @@ primer{
   height: 30px;
   text-align: justify;
   position: relative;
-  top:-30px;
+  top: -30px;
 }
 
 .videoTitle1 {
@@ -31,6 +30,7 @@ primer{
   font-weight: lighter;
   color: grey;
   position: absolute;
- right: -100px;
+  right: -100px;
   top: 12px;
 }
+
