@@ -8,22 +8,58 @@ Page({
     //视频参数 后期请求
     videoCode: '98k',
     videoUrl: '',
-    videoProfile: '这是一个UI视频:',
+    lessonUnit: "UI设计师基础篇",
+    lessonStudied: 25858,
     videoComment: [{
       username: "李二狗",
       time: "2019-09-09",
-      usericon: "",
-      commentcontent: "'视频可以"
+      usericon: "/static/images/usericon1.png",
+      commentcontent: "老师上课非常仔细,快乐学习"
+    }, {
+      username: "张晨",
+      time: "2019-10-08",
+      usericon: "/static/images/usericon2.png",
+      commentcontent: "非常详细的讲解,点赞!"
+    }, {
+      username: "权一舟",
+      time: "2019-09-09",
+      usericon: "/static/images/usericon3.png",
+      commentcontent: "良心教学,强烈推荐"
     }, {
       username: "李二狗",
       time: "2019-09-09",
-      usericon: "",
+      usericon: "/static/images/usericon4.png",
       commentcontent: "'视频可以"
+    }, {
+      username: "蜜桃",
+      time: "2019-09-09",
+      usericon: "/static/images/usericon5.png",
+      commentcontent: "讲的很好,每节课都是一个进步"
+    }, {
+      username: "多多",
+      time: "2019-10-06",
+      usericon: "/static/images/usericon6.png",
+      commentcontent: "讲的很仔细"
     }],
     videoTeacher: {
+      teachericon: "/static/images/usericon1",
       teachername: "陈林",
+      teachersubject: "UI设计特级讲师",
       teacherinfo: "拥有7年研发经验,4年教学经验,熟悉排版设计及包装设计"
     },
+    videoLesson: [{
+      lessonSection: 12,
+      lessonname: "排版设计的通用准则"
+    }, {
+      lessonSection: 13,
+      lessonname: "排版设计的色彩使用"
+      }, {
+        lessonSection: 14,
+        lessonname: "排版设计的网格"
+      }, {
+        lessonSection: 15,
+        lessonname: "排版设计的通用准则"
+      }],
     videoPlayed: 25550,
     videoPaied: false,
     videoSection: "1,2",
@@ -61,6 +97,11 @@ Page({
   openConfirm: function() {
     this.setData({
       dialogShow: true
+    })
+  },
+  goBuy: function() {
+    wx.navigateTo({
+      url: `/pages/shopping-cart/shopping-cart?videoCode=${this.data.videoCode}`,
     })
   },
   tapDialogButton(e) {

@@ -3,24 +3,46 @@
   <video id="myVideo" src="{{videoUrl}}" bindtimeupdate="bindtimeupdate">
   </video>
   <!-- 提醒购买 -->
-  <view wx:if="{{!videoPaied}}">未购买视频,可以试看1分钟</view>
   <!-- 弹框组件 -->
   <mp-dialog title="您还未购买此课程" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
     <view>快加入我们的学习行列吧</view>
   </mp-dialog>
 </view>
 <!-- 简介 -->
-<view>
-  <text bindtap="toggleProfilecomment">简介</text>
-  <text bindtap="toggleProfilecomment">评论</text>
+<view class="detailsContect">
+  <text class="detailTab {{profileComment ? 'detailsContectSel':''}}" bindtap="toggleProfilecomment">简介</text>
+  <text class="detailTab {{!profileComment ? 'detailsContectSel':''}}" bindtap="toggleProfilecomment">评论</text>
+  <text class="unpaied" wx:if="{{!videoPaied}}">试看1分钟 </text>
+  <text class="unpaied1" wx:if="{{!videoPaied}}" bindtap="goBuy">点击购买完整版</text>
+
 </view>
-<view class="profile" wx:if="{{profileComment}}">{{videoProfile}}</view>
+
+<view class="profile" wx:if="{{profileComment}}">
+  <view class="teacherBox">
+    <image class="teachericon" src="{{videoTeacher.teachericon}}"></image>
+    <view class="teacherName">{{teachersubject}}{{teachername}}</view>
+    <view>教师简介</view>
+    <view class="teacherinfo">{{teacherinfo}}</view>
+    <image class="stuied"></image>
+    <text>{{lessonstudied}}</text>
+  </view>
+  <view class="lessonBox" >
+    <text>视频教学</text> <text>{{lessonUnit}}</text>
+    <view class="lessonsectionBox" wx:for="{{videoLesson}}">
+    <text>第{{item.lessonSection}}课: {{item.lessonname}}</text>
+    </view>
+  </view>
+  <primer />
+  <view>相关视频</view>
+  <lessonshow data-videos="{{recommonditions}} " />
+</view>
 <view class="comment" wx:if="{{!profileComment}}" wx:for="{{videoComment}}">
-<image src="{{item.usericon}}"></image>
-<view>{{item.username}}</view>
-<view>{{item.commentcontent}}</view>
-<view>{{item.time}}</view>
+  <view class="commenthead">
+    <image src="{{item.usericon}}" class="commentUsericon"></image>
+    <view class="commentTime ">{{item.time}}</view>
+  </view>
+  <view class="commentfoot">
+    <view class="commentUsername ">{{item.username}}</view>
+    <view class="commentContent ">{{item.commentcontent}}</view>
+  </view>
 </view>
-<primer />
-<view>相关视频</view>
-<lessonshow data-videos="{{recommonditions}}" />

@@ -1,7 +1,21 @@
 /* pages/search-res/search-res.wxss */
-Page{
-  background-color:grey;
+
+Page {
+  background-color: grey;
 }
-lessonshow{
-  
+
+.searchtext {
+  position: relative;
+  font-size:20px;
+  padding-left: 10px;
+  margin-top:20px;
+  line-height: 20px;
+  box-sizing: border-box;
+  top:10px; 
+}
+
+lessonshow {
+  position: absolute !important;
+  top: 50px !important;
+  left: 0;
 }
