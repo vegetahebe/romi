@@ -13,3 +13,9 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+page {
+  font-family: "PingFangSC-Thin";
+  font-size: 32rpx;
+  letter-spacing: 1rpx;
+}

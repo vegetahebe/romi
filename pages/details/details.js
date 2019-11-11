@@ -6,6 +6,7 @@ Page({
    */
   data: {
     //视频参数 后期请求
+    lasttime: 10,
     videoCode: '98k',
     videoUrl: '',
     lessonUnit: "UI设计师基础篇",
@@ -42,7 +43,7 @@ Page({
       commentcontent: "讲的很仔细"
     }],
     videoTeacher: {
-      teachericon: "/static/images/usericon1",
+      teachericon: "/static/images/usericon1.png",
       teachername: "陈林",
       teachersubject: "UI设计特级讲师",
       teacherinfo: "拥有7年研发经验,4年教学经验,熟悉排版设计及包装设计"
@@ -53,16 +54,16 @@ Page({
     }, {
       lessonSection: 13,
       lessonname: "排版设计的色彩使用"
-      }, {
-        lessonSection: 14,
-        lessonname: "排版设计的网格"
-      }, {
-        lessonSection: 15,
-        lessonname: "排版设计的通用准则"
-      }],
+    }, {
+      lessonSection: 14,
+      lessonname: "排版设计的网格"
+    }, {
+      lessonSection: 15,
+      lessonname: "排版设计的通用准则"
+    }],
     videoPlayed: 25550,
-    videoPaied: false,
-    videoSection: "1,2",
+    videoPaied: true,
+    videoSection: 2,
     //弹框属性
     dialogShow: false,
     buttons: [{
@@ -120,30 +121,54 @@ Page({
       profileComment: !this.data.profileComment
     })
   },
+  //本章视频跳转页面
+  jumplessonsection: function(e) {
+    let {
+      index
+    } = e.target.dataset
+    let _this = getCurrentPages()[1]
+    if (index != _this.data.videoSection) {
+      //用index和本页数据去请求数据库跳转到本章另一个页面
+      _this.onLoad()
+
+      _this.setData({
+        videoUrl: `/static/videos/M24.mp4?${{ index }}`
+      })
+    }
+
+
+  },
   /*
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let {
-      videoCode
-    } = options;
-    console.log(videoCode)
+    if (options) {
+      let {
+        videoCode
+      } = options;
+      console.log(videoCode)
+
+    }
+    var mylasttime = this.data.lasttime
+    let continueLearn = this.data.videoPaied && mylasttime > 0
     this.setData({
-      videoCode: videoCode,
-      videoUrl: `/static/videos/${videoCode}.mp4`
+      videoCode: this.data.videoCode,
+      videoUrl: `/static/videos/${this.data.videoCode}.mp4`,
+      mylasttime: mylasttime,
+      continueLearn: continueLearn
     })
   },
   bindtimeupdate: res => {
     let _this = getCurrentPages()[1]
-    if (!_this.data.videoPaied && res.detail.currentTime >= 30) {
+    if (!_this.data.videoPaied && res.detail.currentTime >= 10) {
       var videoContext = wx.createVideoContext("myVideo")
       videoContext.stop()
       _this.openConfirm()
-
     }
     _this.setData({
       lasttime: parseInt(res.detail.currentTime)
     })
+    // console.log(_this.data.lasttime)
   },
 
   /*
@@ -169,7 +194,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    console.log(this.data.lasttime)
   },
 
   /**

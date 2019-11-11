@@ -49,8 +49,8 @@
 
 .detailsContect {
   color: gray;
-  font-size: 24px;
-  font-weight: 300; 
+  font-size: 20px;
+  font-weight: 300;
   margin-top: 10px;
   padding-bottom: 10px;
 }
@@ -63,7 +63,7 @@
 
 .unpaied {
   position: relative;
-  font-size: 16px;
+  font-size: 13px;
   margin-left: 10px;
   right: 10px;
 }
@@ -75,10 +75,70 @@
 }
 
 .detailsContectSel {
-  color: purple;
-  border-bottom: 2px solid purple;
+  color: #4700b8;
+  border-bottom: 2px solid #4700b8;
 }
-.teachericon{
-  width: 80px;
-  height: 80px;
+
+.teachericon {
+  width: 100px;
+  height: 100px;
+}
+
+.teacherBox {
+  margin-top: 10px;
+  display: flex;
+}
+
+.studied {
+  width: 34rpx;
+  height: 20rpx;
+}
+
+.teacherinfoBox {
+  display: inline-block;
+  width: 60%;
+  margin-left: 10px;
+}
+
+.teacherName.teacherinfo {
+  display: inline-block;
+  height: 50px;
+}
+
+.teacherinfo {
+  font-size: 11px;
+  font-weight: 400;
+  color: grey;
+}
+
+.teacherName {
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.lessonsectionBox {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.lessonsection {
+  display: inline-block;
+  border: 3rpx solid #797979;
+  font-size: 15px;
+  font-weight: 400;
+  color: grey;
+  border-radius: 10px;
+  padding:5px;
+  margin: 5px;
+  letter-spacing: 2px;
+  width: 130px;
+  height: 45px;
+  text-overflow: ellipsis;
+  line-clamp: 2;
+  white-space: normal;
+}
+.lessonsectionSel{
+   border: 5rpx solid #b08bea;
+   color:#b08bea;
 }
