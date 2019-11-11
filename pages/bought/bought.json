@@ -1,0 +1,6 @@
+{
+  "components":true,
+  "usingComponents": {
+    "primer":"/components/primer/primer"
+  }
+}

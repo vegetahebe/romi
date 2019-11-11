@@ -1,0 +1,50 @@
+/* pages/bought/bought.wxss */
+
+.container {
+  background: rgba(228, 228, 228, 0.911);
+}
+
+.boughtTitle {
+  width: 95%;
+  height: 40px;
+  background: darkblue;
+  color: white;
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: 550;
+  padding-left: 55px;
+}
+
+.myboughtBox {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  background:white;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+.myboughtImage {
+  width: 49%;
+  height: 130px;
+  margin: 5px;
+}
+
+.myboughtText {
+  margin: 2px;
+  color: lightgray;
+  font-size: 12px;
+  font-weight: 400;
+  width: 49%;
+  padding:2px 1px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.boughtLessonname {
+  font-weight: 600;
+  color: black;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

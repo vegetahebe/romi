@@ -1,0 +1,14 @@
+<view class="container">
+<view class="boughtTitle">已购视频</view>
+<primer />
+<view class="myboughtBox" wx:for="{{lessoninfos}}" wx:key="key">
+<view class="myboughtText">
+<view class="boughtLessonname">《{{item.lessonName}}》</view>
+<view class="boughtLessonordernumber">订单编号:{{item.lessonOrdernumber}}</view>
+<view class="boughtLessonboughttime">购买时间:{{item.lessonBoughttime}}</view>
+<view class="boughtLessonprice">商品价格:￥{{item.lessonPrice}}</view>
+</view>
+<image class="myboughtImage" src="{{item.lessonIcon}}"></image>
+</view>
+
+</view>

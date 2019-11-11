@@ -9,7 +9,8 @@
     "pages/details/details",
     "pages/search-res/search-res",
     "pages/shopping-cart/shopping-cart",
-    "pages/buied/buied"
+    "pages/bought/bought",
+    "pages/myVideo/myVideo"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,7 +37,7 @@
         "selectedIconPath": "/static/images/searchicon1.png"
       },
       {
-        "pagePath": "pages/wishes/wishes",
+        "pagePath": "pages/myVideo/myVideo",
         "text": "我的视频",
         "iconPath": "/static/images/myVideoicon.png",
         "selectedIconPath": "/static/images/myVideoicon1.png"

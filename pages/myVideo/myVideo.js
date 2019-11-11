@@ -1,10 +1,11 @@
-// pages/buied/buied.js
+// pages/myVideo/myVideo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+username:"Vegeta",
 
   },
 
@@ -14,7 +15,11 @@ Page({
   onLoad: function (options) {
 
   },
-
+goBuied:function(){
+  wx.navigateTo({
+    url: `/pages/bought/bought?username=${this.data.username}`,
+  })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
