@@ -4,10 +4,9 @@
   <text>点击上传头像</text>
   <text>昵称</text>
   <text>上次登录时间</text>
-  <view>我的课程</view>
-  <view>订单中心</view>
   <view>心愿单</view>
-  <view>安全中心</view>
+  <view>学习意向</view>
+  <view bindtap="goSecurity">安全中心</view>
   <view>关于我们</view>
   <view>注销登录</view>
 </view>

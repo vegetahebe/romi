@@ -12,7 +12,7 @@ Component({
   data: {
     lessons: [{
         lesson: "Java",
-        icon: "../../static/images/java.png"
+        icon: "../../static/images/java.jpg"
       },
       {
         lesson: "HTML",

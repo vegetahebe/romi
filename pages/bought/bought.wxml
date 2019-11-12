@@ -4,11 +4,11 @@
 <view class="myboughtBox" wx:for="{{lessoninfos}}" wx:key="key">
 <view class="myboughtText">
 <view class="boughtLessonname">《{{item.lessonName}}》</view>
-<view class="boughtLessonordernumber">订单编号:{{item.lessonOrdernumber}}</view>
-<view class="boughtLessonboughttime">购买时间:{{item.lessonBoughttime}}</view>
-<view class="boughtLessonprice">商品价格:￥{{item.lessonPrice}}</view>
+<view class="boughtLessoninfo">订单编号:{{item.lessonOrdernumber}}</view>
+<view class="boughtLessoninfo">购买时间:{{item.lessonBoughttime}}</view>
+<view class="boughtLessoninfo">商品价格:￥{{item.lessonPrice}}</view>
 </view>
 <image class="myboughtImage" src="{{item.lessonIcon}}"></image>
 </view>
-
+<view class="boughtLessonnumber">当前已购:{{lessoninfos.length}}套</view>
 </view>

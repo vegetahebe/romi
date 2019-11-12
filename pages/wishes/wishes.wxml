@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="wishesTitle">心愿单</view>
+
+  <checkbox-group bindchange="calcPrice" class="wishesBox">
+    <view class="wishesItems" wx:for="{{lessoninfos}}" wx:key="key">
+      <image src="{{item.lessonIcon}}"></image>
+      <view class="wishesLessonname">{{item.lessonName}}</view>
+      <view class="wishesLessondesc">{{item.lessonDesc}}</view>
+      <checkbox checked="{{selCheck[index]}}" class="wisherLessonprice" value="{{index}}">￥{{item.lessonPrice}}</checkbox>
+    </view>
+  </checkbox-group>
+  <view class="footerplace"></view>
+  <checkbox-group bindchange="selAll" value="selectAll" class="footerPrice">
+    <checkbox checked="{{selectAll}}" class="checkboxPrice" value="all">全选</checkbox> 共{{selLesson.length}}项 结算
+    <text class="paybill" bindtap="paybill">￥{{totalPrice}}</text>
+  </checkbox-group>
+</view>

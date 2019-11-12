@@ -7,7 +7,7 @@ Page({
   data: {
     //视频参数 后期请求
     lasttime: 10,
-    videoCode: '98k',
+    videoCode: 'Ka98k',
     videoUrl: '',
     lessonUnit: "UI设计师基础篇",
     lessonStudied: 25858,
@@ -142,13 +142,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options) {
-      let {
-        videoCode
-      } = options;
-      console.log(videoCode)
-
-    }
+    let {
+      videoCode
+    } = options;
+    console.log(videoCode)
     var mylasttime = this.data.lasttime
     let continueLearn = this.data.videoPaied && mylasttime > 0
     this.setData({

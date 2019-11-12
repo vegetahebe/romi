@@ -1,7 +1,19 @@
-<view>头像</view>
-<view>昵称</view>
-<view>修改密码</view>
-<view>绑定手机</view>
-<view>解绑手机:186****7727</view>
-<view>绑定邮箱</view>
-<view>解绑邮箱:vegeta****@***.com</view>
+<view class="securityTitle">安全中心</view>
+<view class="changeBox">
+  <image class="changeIcon" src="{{changeItems.passwordIcon}}"></image>修改密码
+</view>
+<view wx:if="{{changeItems.iftel}}" class="changeBox">
+  <image class="changeIcon" src="{{changeItems.telIcon}}"></image>已绑手机:{{telShow}}</view>
+
+<view class="changeBox" wx:if="{{!changeItems.iftel}}">
+  <image class="changeIcon" src="{{changeItems.telIcon}}"></image>点击绑定手机</view>
+
+<view class="changeBox" wx:if="{{changeItems.ifemail}}">
+  <image class="changeIcon" src="{{changeItems.emailIcon}}"></image>已绑邮箱:{{emailShow}}</view>
+
+<view class="changeBox" wx:if="{{!changeItems.ifemail}}">
+  <image class="changeIcon" src="{{changeItems.emailIcon}}"></image>点击绑定邮箱</view>
+
+<view class="changeBox ">
+  <image class="changeIcon " src="{{changeItems.connectionIcon}} "></image>绑定社交账号</view>
+<!-- <view>解绑邮箱:vegeta****@***.com</view> -->
