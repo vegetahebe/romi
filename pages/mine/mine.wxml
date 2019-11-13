@@ -1,12 +1,32 @@
 <!--pages/mine/mine.wxml-->
 <view class="container">
-  <image>头像</image>
-  <text>点击上传头像</text>
-  <text>昵称</text>
-  <text>上次登录时间</text>
-  <view>心愿单</view>
-  <view>学习意向</view>
-  <view bindtap="goSecurity">安全中心</view>
-  <view bindtap="goAboutus">关于我们</view>
-  <view>注销登录</view>
+  <view class="userbox">
+    <view class="usericon">
+      <image class="usericonimage" src="{{userimg}}">头像</image>
+      <view class="updateicon" bindtap="upShopLogo">点击上传头像</view>
+    </view>
+    <view class="nickname">
+      <view>{{username}}</view>
+      <text>上次登录时间  {{lastlogintime}}</text>
+    </view>
+  </view>
+  <view class="buttonicons">
+    <view bindtap="goWishes">
+      <image src="{{wishesUrl}}"></image>
+      <view>心愿单</view>
+    </view>
+    <view>
+      <image src="{{intentUrl}}"></image>
+      <view>学习意向</view>
+    </view>
+    <view>
+      <image src="{{cardsUrl}}"></image>
+      <view>我的卡券</view>
+    </view>
+  </view>
+  <view style="width: 100%;">
+    <view class="aboutus" bindtap="goSecurity">安全中心</view>
+    <view class="aboutus" bindtap="goAboutus">关于我们</view>
+  </view>
+  <view class="logout">注销登录</view>
 </view>

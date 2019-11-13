@@ -1,43 +1,25 @@
-// pages/bought/bought.js
+// pages/alipay/alipay.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    lessoninfos: [{
-      lessonName: "Java 大数据开发技术",
-      lessonOrdernumber: "2019110213",
-      lessonBoughttime: "2019-05-11",
-      lessonPrice: "3200",
-      lessonIcon: "/static/images/bought1.png"
-    }, {
-      lessonName: "网页设计基础",
-      lessonOrdernumber: "2019115513",
-      lessonBoughttime: "2019-06-11",
-      lessonPrice: "4200",
-      lessonIcon: "/static/images/bought2.png"
-    }, {
-      lessonName: "Web 前端工程师",
-      lessonOrdernumber: "2019115001",
-      lessonBoughttime: "2019-06-11",
-      lessonPrice: "4200",
-      lessonIcon: "/static/images/bought3.png"
-    }]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let {
-      username
-    } = options
-    this.setData({
-      username: username
-    })
+
   },
 
+  goBought: function() {
+    wx.navigateTo({
+      url: '/pages/bought/bought',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

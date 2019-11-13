@@ -66,9 +66,7 @@ Page({
       selLesson.push({
         "lessonName": _this.data.lessoninfos[item].lessonName
       })
-      if (_this.data.selCheck != _this.data.selFalse) {
         selCheck[item] = true
-      }
     })
     _this.setData({
       totalPrice: selPrice,

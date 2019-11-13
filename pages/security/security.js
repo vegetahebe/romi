@@ -10,17 +10,17 @@ Page({
     changeItems: {
       password: "vegeta1213",
       passwordIcon: "/static/images/password.png",
-      iftel: false,
+      iftel: true,
       tel: "18628327727",
       telIcon: "/static/images/tel.png",
-      ifemail: false,
+      ifemail: true,
       connection: {
         "QQ": "151209036",
         "WeChat": "vegeta1213"
       },
       connectionIcon: "/static/images/connection.png",
       email: "vegeta1213@126.com",
-      emailIcon: "/static/images/password.png"
+      emailIcon: "/static/images/email.png"
     }
   },
 

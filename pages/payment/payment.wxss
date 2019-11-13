@@ -1,6 +1,7 @@
 /* pages/payment/payment.wxss */
+
 page {
-  background-color:rgb(220, 220, 220)
+  background-color: rgb(245, 245, 245);
 }
 
 .paymentTitle {
@@ -14,29 +15,179 @@ page {
   text-align: center;
   margin-bottom: 30px;
 }
-.paylist{
+
+.paylist {
   display: flex;
+  margin: 10px;
+  background: white;
 }
-.paylist image{
-  width: 45%;
-  height: 86px;
-  margin: 24px;
+
+.paylist image {
+  width: 100%;
+  height: 90px;
+  margin: auto 1px;
+  padding: 0 8px;
 }
-.itemname{
-  color:rgb(91, 91, 91);
-  font-size: 26px;
+
+.itemname {
+  color: rgb(91, 91, 91);
+  font-size: 16px;
   font-weight: 600;
   text-align: left;
-  margin:10px 24px;
+  margin-bottom: 10px;
 }
-.itemdesc{
-  text-overflow: -o-ellipsis-lastline;
+
+.itemdesc {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  font-size: 12px;
+  width: 85%;
+  line-height: 19px;
+  color: lightgrey;
+  font-weight: 400;
 }
-.itemprice text{
-  color: red
+
+.itemprice {
+  font-size: 15px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.itemprice text {
+  color: red;
+}
+
+.checkTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.userinfoBox {
+  background: white;
+  padding-bottom: 10px;
+}
+
+.userinfo {
+  margin-top: 19px;
+  margin-bottom: 19px;
+  margin-left: 25px;
+  font-weight: 500;
+  font-size: 15px;
+  color: gray;
+}
+
+.paywayBox {
+  background: white;
+}
+
+checkbox {
+  margin-left: 15px;
+}
+
+.divline {
+  background: black;
+  height: 1rpx;
+  width: 80%;
+  margin-left: 20px;
+  margin-top: 13px;
+}
+
+radio .wx-radio-input {
+  border-radius: 50%; /* 圆角 */
+  width: 46rpx; /* 背景的宽 */
+  height: 46rpx; /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border: 1rpx solid #4700b8;
+  background: #4700b8;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 35rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 35rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 35rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+radio-group {
+  margin: 5px 0;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+radio-group image {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+radio-group view {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1rpx solid rgb(230, 230, 230);
+  border-radius: 20px;
+}
+
+radio-group text {
+  margin-left: 10px;
+}
+
+.footerPrice {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  height: 40px;
+  background: darkblue;
+  text-align: left;
+  padding-left: 20px;
+  color: white;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.paybill {
+  width: 70px;
+  height: 30px;
+  background: white;
+  color: rgb(253, 105, 15);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.confirm {
+  color: rgb(200, 200, 200);
+  border: 2rpx solid rgb(200, 200, 200);
+  font-weight: 600;
+  line-height: 30px;
+  position: absolute;
+  right: 23px;
+  border-radius: 10px;
+  width: 84px;
+  text-align: center;
+  margin: 4px;
+}
+
+.selConfirm {
+  color: white;
+  font-weight: 600;
+  border: 2rpx solid white;
 }

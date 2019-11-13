@@ -10,7 +10,9 @@
     "pages/search-res/search-res",
     "pages/payment/payment",
     "pages/bought/bought",
-    "pages/myVideo/myVideo"
+    "pages/myVideo/myVideo",
+    "pages/alipay/alipay",
+    "pages/wechatpay/wechatpay"
   ],
   "window": {
     "backgroundTextStyle": "light",

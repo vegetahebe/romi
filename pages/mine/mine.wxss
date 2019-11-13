@@ -1,1 +1,102 @@
 /* pages/mine/mine.wxss */
+
+page {
+  background-color: rgb(245, 245, 245);
+}
+
+.usericonimage {
+  width: 80px;
+  height: 80px;
+}
+
+.updateicon {
+  font-size: 10px;
+  color: grey;
+  border: 1rpx solid gray;
+  border-radius: 10px;
+}
+
+.userbox {
+  display: flex;
+  width: 100%;
+  padding-left: 50px;
+  padding-top: 10px;
+  background: white;
+}
+
+.buttonicons {
+  border: 2rpx solid rgb(212, 212, 212);
+  border-radius: 10px;
+  display: flex;
+  width: 95%;
+  justify-content: space-around;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.buttonicons>view>view {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.buttonicons>view {
+  margin-top: 10px;
+}
+
+.buttonicons image {
+  height: 80px;
+  width: 80px;
+}
+
+.nickname {
+  margin-left: 20px;
+}
+
+.nickname text {
+  font-size: 13px;
+  font-weight: 250;
+  padding-top: 10px;
+}
+
+.nickname view {
+  margin: 5px 0;
+  font-weight: 550;
+  font-size: 18px;
+}
+
+.updateicon {
+  font-size: 11px;
+  color: grey;
+  border: 1rpx solid gray;
+  border-radius: 10px;
+  text-align: center;
+  height: auto;
+  line-height: 18px;
+  margin-bottom: 10px;
+  font-weight: 150;
+}
+
+.aboutus {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  padding-left: 20px;
+  color: #2e2e2e;
+  margin-bottom: 2px;
+  text-align: left;
+  font-weight: 500;
+  background: white;
+}
+
+.logout {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  color: #2e2e2e;
+  margin-top: 60px;
+  text-align: center;
+  font-weight: 550;
+  background: white;
+}
