@@ -10,7 +10,6 @@
     "pages/search-res/search-res",
     "pages/payment/payment",
     "pages/bought/bought",
-    "pages/myVideo/myVideo",
     "pages/alipay/alipay",
     "pages/wechatpay/wechatpay"
   ],
@@ -39,7 +38,7 @@
         "selectedIconPath": "/static/images/searchicon1.png"
       },
       {
-        "pagePath": "pages/myVideo/myVideo",
+        "pagePath": "pages/bought/bought",
         "text": "我的视频",
         "iconPath": "/static/images/myVideoicon.png",
         "selectedIconPath": "/static/images/myVideoicon1.png"

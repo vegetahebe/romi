@@ -57,14 +57,14 @@ Page({
     })
   },
   isAgreement: function(e) {
-    var _this = getCurrentPages()[1]
+    var _this = getCurrentPages()[getCurrentPages().length-1]
     _this.setData({
       agreement: (e.detail.value[0] == "agree"),
       canPay: (e.detail.value[0] == "agree" && _this.data.payWay)
     })
   },
   myPayway: function(e) {
-    var _this = getCurrentPages()[1]
+    var _this = getCurrentPages()[getCurrentPages().length - 1]
     var payWay = e.detail.value
     this.setData({
       payWay: payWay,
@@ -72,7 +72,7 @@ Page({
     })
   },
   confirmPay: function() {
-    var _this = getCurrentPages()[1]
+    var _this = getCurrentPages()[getCurrentPages().length - 1]
     if (!_this.data.agreement) {
       _this.setData({
         warning: "请阅读支付服务条款并同意",

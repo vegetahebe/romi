@@ -62,7 +62,7 @@ Page({
       lessonname: "排版设计的通用准则"
     }],
     videoPlayed: 25550,
-    videoPaied: true,
+    videoPaied: false,
     videoSection: 2,
     //弹框属性
     dialogShow: false,
@@ -126,7 +126,7 @@ Page({
     let {
       index
     } = e.target.dataset
-    let _this = getCurrentPages()[1]
+    let _this = getCurrentPages()[getCurrentPages().length - 1]
     if (index != _this.data.videoSection) {
       //用index和本页数据去请求数据库跳转到本章另一个页面
       _this.onLoad()
@@ -156,7 +156,7 @@ Page({
     })
   },
   bindtimeupdate: res => {
-    let _this = getCurrentPages()[1]
+    let _this = getCurrentPages()[getCurrentPages().length - 1]
     if (!_this.data.videoPaied && res.detail.currentTime >= 10) {
       var videoContext = wx.createVideoContext("myVideo")
       videoContext.stop()
@@ -166,6 +166,9 @@ Page({
       lasttime: parseInt(res.detail.currentTime)
     })
     // console.log(_this.data.lasttime)
+  },
+  addWishes:function(){
+    // 加入心愿单
   },
 
   /*

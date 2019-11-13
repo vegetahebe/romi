@@ -1,4 +1,6 @@
 <!--pages/alipay/alipay.wxml-->
 <image src="/static/images/alipay.png"></image>
-<view bindtap="goBought">已完成付款</view>
-<view>付款失败</view>
+<view class="buttonBox">
+<text class="paySucess" bindtap="goBought">已付款</text>
+<text class="payFailed">付款失败</text>
+</view>

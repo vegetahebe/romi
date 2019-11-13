@@ -27,8 +27,5 @@ Component({
         url: `/pages/details/details?videoCode=${videoCode}`,
       })
     },
-  print:function(){
-    console.log(this.data)
-  }
   }
 })

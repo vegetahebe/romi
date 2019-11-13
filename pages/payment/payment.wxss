@@ -84,6 +84,7 @@ page {
 
 .paywayBox {
   background: white;
+  height: 292px;
 }
 
 checkbox {

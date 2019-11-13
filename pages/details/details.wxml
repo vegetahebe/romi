@@ -14,6 +14,7 @@
   <text class="detailTab {{!profileComment ? 'detailsContectSel':''}}" bindtap="toggleProfilecomment">评论</text>
   <text class="unpaied" wx:if="{{!videoPaied}}">试看1分钟 </text>
   <text class="unpaied1" wx:if="{{!videoPaied}}" bindtap="goBuy">购买完整版</text>
+  <text class="unpaied1" wx:if="{{!videoPaied}}" bindtap="addWishes">加入心愿单</text>
   <text class="unpaied" wx:if="{{continueLearn}}">上次学习到{{(mylasttime-(mylasttime%60))/60}}分{{mylasttime%60}}秒,为您继续播放</text>
 
 </view>

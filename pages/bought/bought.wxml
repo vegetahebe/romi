@@ -1,14 +1,23 @@
 <view class="container">
-<view class="boughtTitle">已购视频</view>
-<primer />
-<view class="myboughtBox" wx:for="{{lessoninfos}}" wx:key="key">
-<view class="myboughtText">
-<view class="boughtLessonname">《{{item.lessonName}}》</view>
-<view class="boughtLessoninfo">订单编号:{{item.lessonOrdernumber}}</view>
-<view class="boughtLessoninfo">购买时间:{{item.lessonBoughttime}}</view>
-<view class="boughtLessoninfo">商品价格:￥{{item.lessonPrice}}</view>
-</view>
-<image class="myboughtImage" src="{{item.lessonIcon}}"></image>
-</view>
-<view class="boughtLessonnumber">当前已购:{{lessoninfos.length}}套</view>
+  <view class="boughtTitle">已购视频</view>
+  <view class="userbox">
+    <view class="usericon">
+      <image class="usericonimage" src="{{userimg}}">头像</image>
+    </view>
+    <view class="nickname">
+      <view>{{username}}</view>
+      <text>学习积分  {{totalPrice}}</text>
+    </view>
+  </view>
+  <primer />
+  <view class="myboughtBox" wx:for="{{lessoninfos}}" wx:key="key" bindtap="goDetail" data-text="{{item.lessonName}}">
+    <view class="myboughtText">
+      <view class="boughtLessonname">《{{item.lessonName}}》</view>
+      <view class="boughtLessoninfo">订单编号:{{item.lessonOrdernumber}}</view>
+      <view class="boughtLessoninfo">购买时间:{{item.lessonBoughttime}}</view>
+      <view class="boughtLessoninfo">商品价格:￥{{item.lessonPrice}}</view>
+    </view>
+    <image class="myboughtImage" src="{{item.lessonIcon}}"></image>
+  </view>
+  <view class="boughtLessonnumber">当前已购:{{lessoninfos.length}}套</view>
 </view>

@@ -56,7 +56,7 @@ Page({
 
   },
   calcPrice: function(e) {
-    let _this = getCurrentPages()[1]
+    let _this = getCurrentPages()[getCurrentPages().length - 1]
     var selIndex = e.detail.value
     var selLesson = []
     var selPrice = 0
@@ -66,7 +66,7 @@ Page({
       selLesson.push({
         "lessonName": _this.data.lessoninfos[item].lessonName
       })
-        selCheck[item] = true
+      selCheck[item] = true
     })
     _this.setData({
       totalPrice: selPrice,
@@ -82,7 +82,7 @@ Page({
 
   },
   selAll: function(e) {
-    var _this = getCurrentPages()[1]
+    var _this = getCurrentPages()[getCurrentPages().length - 1]
     if (e.detail.value[0] == "all") {
       var selLesson = []
       var selPrice = 0
@@ -105,7 +105,7 @@ Page({
       })
     }
   },
-  paybill:function(e){
+  paybill: function(e) {
     //发送数据 
     wx.navigateTo({
       url: '/pages/payment/payment',

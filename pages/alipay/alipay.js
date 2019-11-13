@@ -16,7 +16,7 @@ Page({
   },
 
   goBought: function() {
-    wx.navigateTo({
+    wx.reLaunch({
       url: '/pages/bought/bought',
     })
   },
