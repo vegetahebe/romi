@@ -1,0 +1,25 @@
+<!--pages/payment/payment.wxml-->
+<view class="paymentTitle">核对订单</view>
+
+<view class="paylistBox">
+  <view class="checkTitle">商品核对</view>
+  <view class="paylist" wx:for="{{lessoninfos}}">
+    <image src="{{item.lessonImage}}"></image>
+    <view class="iteminfos">
+      <view class="itemname">{{item.lessonName}}</view>
+      <view class="itemdesc">{{item.lessonDesc}}</view>
+      <view class="itemprice">价格: ￥
+        <text>{{item.lessonPrice}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="userinfoBox">
+  <view class="checkTitle">账号核对</view>
+  <view class="userinfo">账号昵称:{{user.username}}</view>
+  <view class="userinfo">绑定手机:{{telShow}}</view>
+  <view class="userinfo">绑定邮箱:{{emailShow}}</view>
+</view>
+<view class="paywayBox">
+  <view class="checkTitle">支付核对</view>
+</view>

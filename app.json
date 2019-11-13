@@ -8,7 +8,7 @@
     "pages/security/security",
     "pages/details/details",
     "pages/search-res/search-res",
-    "pages/shopping-cart/shopping-cart",
+    "pages/payment/payment",
     "pages/bought/bought",
     "pages/myVideo/myVideo"
   ],

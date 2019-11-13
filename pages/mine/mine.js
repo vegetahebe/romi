@@ -14,10 +14,16 @@ Page({
   onLoad: function() {
 
   },
-  goSecurity: function() {
+  goSecurity: function(e) {
     wx.navigateTo({
       url: '/pages/security/security',
     })
+  },
+  goAboutus:function(e){
+    wx.navigateTo({
+      url: '/pages/payment/payment',
+    })
+
   },
 
   /**
