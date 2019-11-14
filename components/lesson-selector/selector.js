@@ -1,3 +1,8 @@
+import {
+  BaseURL,
+  MediaURL
+} from "../../utils/util.js"
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -12,35 +17,35 @@ Component({
   data: {
     lessons: [{
         lesson: "Java",
-        icon: "../../static/images/java.jpg"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3MwI2AVkd8AAAYcvfGZag994.jpg`
       },
       {
         lesson: "HTML",
-        icon: "../../static/images/html.png"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3Mv0CAHNzsAAAI334TgUY229.png`
       },
       {
         lesson: "IOS",
-        icon: "../../static/images/ios.png"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3MwHKAeC8kAAAHd8j1Oj0296.png`
       },
       {
         lesson: "UI",
-        icon: "../../static/images/ui.png"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3MzsaABGCuAAAH2iNQmSU504.png`
       },
       {
         lesson: "WEB",
-        icon: "../../static/images/web.png"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3M0AWAOWMkAAALaffHy20621.png`
       },
       {
         lesson: "AR",
-        icon: "../../static/images/ar.png"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3MvmSAKYYWAAAH4-2fXQM807.png`
       },
       {
         lesson: "Python",
-        icon: "../../static/images/python.png"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3MwgOADv3kAAAI6QME0q4123.png`
       },
       {
         lesson: "搜索",
-        icon: "../../static/images/more.png"
+        icon: `${MediaURL}/group1/M00/00/00/CgIFIl3MwX2AQD1TAAAIrFWbJqk138.png`
       },
     ]
 
@@ -52,9 +57,15 @@ Component({
   methods: {
     searchhotkeysSel: function(event) {
       let keywords = event.currentTarget.dataset.text
-      wx.navigateTo({
-        url: `/pages/search-res/search-res?keywords=${keywords}`,
-      })
+      if (keywords == "搜索") {
+        wx.switchTab({
+          url: '/pages/search/search',
+        })
+      } else {
+        wx.navigateTo({
+          url: `/pages/search-res/search-res?keywords=${keywords}`,
+        })
+      }
     }
   }
 })

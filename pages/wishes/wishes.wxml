@@ -3,15 +3,18 @@
 
   <checkbox-group bindchange="calcPrice" class="wishesBox">
     <view class="wishesItems" wx:for="{{lessoninfos}}" wx:key="key">
-      <image src="{{item.lessonIcon}}"></image>
-      <view class="wishesLessonname">{{item.lessonName}}</view>
-      <view class="wishesLessondesc">{{item.lessonDesc}}</view>
-      <checkbox checked="{{selCheck[index]}}" class="wisherLessonprice" value="{{index}}">￥{{item.lessonPrice}}</checkbox>
+      <image src="{{item.courseintroductionBreviarypictyre}}"></image>
+      <view class="wishesLessonname">{{item.courseintroductionNarrate}}</view>
+      <view class="wishesLessondesc">{{item.courseintroductionSummarize}}</view>
+      <checkbox checked="{{selCheck[index]}}" class="wisherLessonprice" value="{{index}}">￥{{item.courseintroductionPrice}}</checkbox>
     </view>
   </checkbox-group>
+  <view class="no-data" wx:if="{{nodata}}">
+        (¬‿¬) 对不起,您的购物车中暂时没有视频~
+    </view>
   <view class="footerplace"></view>
   <checkbox-group bindchange="selAll" value="selectAll" class="footerPrice">
-    <checkbox checked="{{selectAll}}" class="checkboxPrice" value="all">全选</checkbox> 共{{selLesson.length}}项 结算
+    <checkbox checked="{{selectAll}}" class="checkboxPrice" value="all">全选</checkbox> <text bindtap="deleteSel">删除选中     </text>  共{{selLesson.length}}项 结算
     <text class="paybill" bindtap="paybill">￥{{totalPrice}}</text>
   </checkbox-group>
 </view>

@@ -1,4 +1,9 @@
 // pages/wishes/wishes.js
+import {
+  BaseURL,
+  MediaURL
+} from '../../utils/util.js'
+const app = getApp()
 Page({
 
   /**
@@ -6,55 +11,35 @@ Page({
    */
   data: {
     totalPrice: 0,
+    nodata: true,
     selLesson: [],
     selFalse: [],
     selTrue: [],
     selCheck: [],
     selectAll: false,
-    lessoninfos: [{
-      lessonName: "Java 大数据开发技术",
-      lessonDesc: "本课程重在培养学生更好的理解与用户本课程重在培养学生更好的理解与用户",
-      lessonPrice: "3200",
-      lessonIcon: "/static/images/bought1.png"
-    }, {
-      lessonName: "网页设计基础",
-      lessonDesc: "本课程重在培养学生更好的理解与用户本课程重在培养学生更好的理解与用户",
-      lessonPrice: "4200",
-      lessonIcon: "/static/images/bought2.png"
-    }, {
-      lessonName: "Web 前端工程师",
-      lessonDesc: "本课程重在培养学生更好的理解与用户本课程重在培养学生更好的理解与用户",
-      lessonPrice: "4200",
-      lessonIcon: "/static/images/bought3.png"
-    }, {
-      lessonName: "Web 前端工程师",
-      lessonDesc: "本课程重在培养学生更好的理解与用户本课程重在培养学生更好的理解与用户",
-      lessonPrice: "4200",
-      lessonIcon: "/static/images/bought3.png"
-    }, {
-      lessonName: "Web 前端工程师",
-      lessonDesc: "本课程重在培养学生更好的理解与用户本课程重在培养学生更好的理解与用户",
-      lessonPrice: "4200",
-      lessonIcon: "/static/images/bought3.png"
-    }]
+    lessoninfos: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var selFalse = []
-    var selTrue = []
-    for (let i = 0; i < this.data.lessoninfos.length; i++) {
-      selFalse.push(false)
-      selTrue.push(true)
-    }
-    this.setData({
-      selFalse: selFalse,
-      selTrue: selTrue
+    //新学会的写法,提高性能
+    // for (let i = 0; i < this.data.lessoninfos.length; i++) {
+    //   selFalse.push(false)
+    //   selTrue.push(true)
+    // }
+    console.log(app.globalData.username)
+    this.getWishes("/getUserSopping", {
+      verification: app.globalData.username,
+      commoditys: '',
+      commoditysSopping: []
+    }).then(res => {
+      this.handleWishes(res)
     })
-
   },
+
+  //计算总价
   calcPrice: function(e) {
     let _this = getCurrentPages()[getCurrentPages().length - 1]
     var selIndex = e.detail.value
@@ -62,11 +47,16 @@ Page({
     var selPrice = 0
     var selCheck = [..._this.data.selFalse]
     selIndex.forEach(function(item, index) {
-      selPrice += parseInt(_this.data.lessoninfos[item].lessonPrice)
+      console.log(_this.data.lessoninfos)
+      console.log(_this.data.lessoninfos[item].courseintroductionPrice)
+      selPrice += parseInt(_this.data.lessoninfos[item].courseintroductionPrice)
+      console.log(selPrice)
       selLesson.push({
-        "lessonName": _this.data.lessoninfos[item].lessonName
+        "courseintroductionDistinction": _this.data.lessoninfos[item].courseintroductionDistinction
       })
+      console.log(selCheck)
       selCheck[item] = true
+      console.log(selCheck)
     })
     _this.setData({
       totalPrice: selPrice,
@@ -81,15 +71,16 @@ Page({
     }
 
   },
+  //全选
   selAll: function(e) {
     var _this = getCurrentPages()[getCurrentPages().length - 1]
     if (e.detail.value[0] == "all") {
       var selLesson = []
       var selPrice = 0
       _this.data.lessoninfos.forEach(function(item, index) {
-        selPrice += parseInt(item.lessonPrice)
+        selPrice += parseInt(item.courseintroductionPrice)
         selLesson.push({
-          "lessonName": item.lessonName
+          "courseintroductionDistinction": item.courseintroductionDistinction
         })
       })
       _this.setData({
@@ -105,58 +96,88 @@ Page({
       })
     }
   },
-  paybill: function(e) {
-    //发送数据 
-    wx.navigateTo({
-      url: '/pages/payment/payment',
+
+  //删除
+  deleteSel: function(e) {
+    var _this = getCurrentPages()[getCurrentPages().length - 1]
+    console.log(_this.data)
+    var selitems = Array.from(_this.data.selLesson, ({
+      courseintroductionDistinction
+    }) => courseintroductionDistinction)
+    console.log(app.globalData.username)
+    wx.request({
+      url: `${BaseURL}/deleteByOrderid`,
+      method: "POST",
+      data: {
+        verification: app.globalData.username,
+        commoditys: '',
+        commoditysSopping: selitems
+      },
+      success: res => {
+        _this.getWishes("/getUserSopping", {
+          verification: app.globalData.username,
+          commoditys: '',
+          commoditysSopping: []
+        }).then(res => {
+          _this.handleWishes(res)
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
 
+  //结算
+  paybill: function(e) {
+    var _this = getCurrentPages()[getCurrentPages().length - 1]
+    var selitems = Array.from(_this.data.courseintroductionPrice, ({
+      courseintroductionDistinction
+    }) => courseintroductionDistinction)
+    var selstring = String(...[selitems])
+    console.log(selstring)
+    //发送数据 
+    wx.navigateTo({
+      url: `/pages/payment/payment?${selstring}`,
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
+  //发送请求 接受数据
+  getWishes(url, data) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BaseURL}${url}`,
+        method: "POST",
+        data: data,
+        success: res => {
+          resolve(res.data.data);
+        },
+        fail: err => {
+          console.log(err)
+        }
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
+  //处理数据
+  handleWishes(res) {
+    if (res) {
+      res.forEach((item) => {
+        item.courseintroductionBreviarypictyre = MediaURL + "/" + item.courseintroductionBreviarypictyre
+      })
+      var selFalse = new Array(res.length).fill(false)
+      var selTrue = new Array(res.length).fill(true)
+      this.setData({
+        selFalse: selFalse,
+        selTrue: selTrue,
+        nodata:false
+      })
+      this.setData({
+        lessoninfos: res
+      })
+    } else {
+      this.setData({
+        nodata: true
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  }
 })

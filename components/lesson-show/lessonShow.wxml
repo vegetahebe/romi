@@ -1,10 +1,10 @@
 <view class="lessonShow" wx:for="{{showitems}}" wx:key="{{index}}">
-  <image src="{{item.lessonicon}}"></image>
+  <image src="{{item.courseintroductionBreviarypictyre}}"></image>
   <view class="lessonInfo">
-    <text class="showTitle">{{item.lessonname}}\n</text>
+    <text class="showTitle">{{item.courseintroductionNarrate}}\n</text>
     <text class="showTeacher">
-    {{item.lessonteacher}}\n</text>
-    <text class="studied">已有{{item.lessonstudied}}人学习过</text>
+    {{item.courseintroductionTeacher}}\n</text>
+    <text class="studied">已有{{item.courseintroductionWatchnumber}}人学习过</text>
   </view>
-  <button class="learnnow" bindtap="goDetail" data-text="{{item.videoCode}}">立即学习</button>
+  <button class="learnnow" bindtap="goDetail" data-text="{{item.courseintroductionDistinction}}">立即学习</button>
 </view>

@@ -1,4 +1,9 @@
 // components/lesson-show/lessonShow.js
+import {
+  BaseURL,
+  MediaURL
+} from '../../utils/util.js'
+const app = getApp()
 Component({
   /**
    * 组件的属性列表

@@ -7,6 +7,7 @@
     "pages/auth/auth",
     "pages/security/security",
     "pages/details/details",
+    "pages/aboutus/aboutus",
     "pages/search-res/search-res",
     "pages/payment/payment",
     "pages/bought/bought",

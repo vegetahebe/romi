@@ -1,4 +1,9 @@
 // components/primer/primer.js
+import {
+  BaseURL,
+  MediaURL
+} from '../../utils/util.js'
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -11,7 +16,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    hotlesson: "WEB"
+    hotlesson: "WEB",
+    src: `${MediaURL}/group1/M00/00/00/CgIFIl3MvnaASCR9AACWYzNy29o229.png`
   },
 
   /**

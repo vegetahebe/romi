@@ -1,3 +1,6 @@
 <!--pages/search-res/search-res.wxml-->
 <text class="searchtext">与"{{keywords}}"相关的视频</text>
 <lessonShow showitems= "{{searchresults}}" />
+ <view class="no-data" wx:if="{{nodata}}">
+        (¬‿¬) 对不起,暂时没有您搜索的视频~
+    </view>

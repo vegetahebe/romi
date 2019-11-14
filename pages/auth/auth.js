@@ -1,66 +1,50 @@
-// pages/auth/auth.js
+import {
+  BaseURL,
+  MediaURL
+} from "../../utils/util.js"
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // => events
+  getUserInfo(event) {
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.login({
+            success: function(res) {
+              if (res.code) {
+                wx.request({
+                  url: `https://api.weixin.qq.com/sns/jscode2session?appid=wx642d0eeb25f00004&secret=c0351f8e6c1367f4d1e3f56fb2901c89&js_code=${res.code}&grant_type=authorization_code`,
+                  success(response) {
+                    console.log(response.data)
+                    wx.request({
+                      url: `${BaseURL}/minLogin`,
+                      method: "POST",
+                      data: response.data,
+                      success(res) {
+                        app.globalData.username = res.data.data[0]
+                        wx.navigateBack({
+                          delta: 1,})
+                      },
+                      fail(err) {
+                        console.log(err)
+                      }
+                    })
+                  }
+                })
+              } else {
+                console.log("登录失败", res.errMsg);
+              }
+            }
+          })
+        } else {
+          wx.showModal({
+            title: '温馨提示',
+            content: '您需授权才能继续！',
+            confirmText: '去设置',
+            showCancel: false
+          })
+        }
+      }
+    })
   }
 })

@@ -8,5 +8,5 @@
     <text class="videoTitle2">更多...</text>
   </view>
     <lessonShow showitems='{{recommenditions}}' />
-    <lessonShow2 />
+    <lessonShow2 lessonShow="{{lessonShow}}"/>
 </view>

@@ -1,48 +1,19 @@
 // pages/search-res/search-res.js
+import {
+  BaseURL,
+  MediaURL
+} from '../../utils/util.js'
+const app = getApp()
 Page({
 
-  /**
+  /*
    * 页面的初始数据
    */
   data: {
+    BaseURL,
+    nodata: false,
     searchsource: [], // 搜索数据源
-    searchresults: [{
-      name: "HTML",
-      lessonname: "HTML5全栈进阶视频教程",
-      lessonteacher: "陈林",
-      lessonstudied: 25858,
-      lessonicon: "../../static/images/lessonHTML.png",
-      price: 1500,
-      videoUrl: "/static/video/Ka98k.mp4",
-      videoCode: "Ka98k"
-    }, {
-      name: "JAVA",
-      lessonname: "JAVA高级视频课程",
-      lessonteacher: "许文强",
-      lessonstudied: 25858,
-      lessonicon: "../../static/images/lessonJAVA.png",
-      price: 1500,
-      videoUrl: "/static/video/M24.mp4",
-      videoCode: "M24"
-    }, {
-      name: "UI",
-      lessonname: "UI/UE从入门到精通",
-      lessonteacher: "海燕",
-      lessonstudied: 48503,
-      lessonicon: "../../static/images/lessonUI.png",
-      price: 1500,
-      videoUrl: "/static/video/M24.mp4",
-      videoCode: "M24"
-    }, {
-      name: "PYTHON",
-      lessonname: "PYTHON实战经验大解析",
-      lessonteacher: "云兵",
-      lessonstudied: 12325,
-      lessonicon: "../../static/images/lessonPYTHON.png",
-      price: 1500,
-      videoUrl: "/static/video/M24.mp4",
-      videoCode: "M24"
-    }], // 搜索结果
+    searchresults: [],
     keywords: "", // 搜索关键字
   },
   /**
@@ -53,12 +24,78 @@ Page({
       keywords
     } = options
     this.setData({
-      keywords
+      keywords,
     })
-    // 用keywords 请求数据
-  },
- 
 
+    // // 获取搜索数据源
+    // getApp().wxajax('/getAllsuit',"POST",this.data.data).then(res=>{
+    //   this.setData({
+    //     searchsource: res
+    //   });
+    //   //开始搜索
+    //   this.search();
+    // })
+    this.getSource('/getAllSuit').then(res => {
+
+      this.setData({
+        searchsource: res
+      });
+      // 开始搜索
+      this.search();
+    });
+
+  },
+
+  //请求数据函数
+  getSource(url) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BaseURL}${url}`,
+        method: "POST",
+        data: {},
+        success: res => {
+          resolve(res.data.data);
+        },
+        fail: err => {
+          console.log(err)
+        }
+      })
+    })
+  },
+  //正则处理请求数据显示内容匹配项
+  search() {
+    let {
+      searchsource,
+      keywords,
+      searchresults
+    } = this.data;
+    let reg = new RegExp(keywords, "i");
+    console.log(reg)
+    // 搜索数据
+    searchresults = searchsource.filter(item => {
+      return reg.test(JSON.stringify(item.courseintroductionNarrate)) || reg.test(JSON.stringify(item.courseintroductionTeacher));
+    });
+    if (searchresults.length == 0) {
+      this.setData({
+        nodata: true
+      })
+    } else {
+      console.log(searchsource, keywords, searchresults)
+      searchresults.forEach((item) => {
+        item.courseintroductionBreviarypictyre = MediaURL + "/" + item.courseintroductionBreviarypictyre
+      })
+      console.log(searchresults[0].courseintroductionBreviarypictyre)
+      this.setData({
+        searchresults,
+        nodata:false
+      })
+    }
+    // 更新搜索结果
+    // let noData = searchsource.length < 0;
+    // this.setData({
+    //   searchsource
+    // });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

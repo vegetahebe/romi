@@ -43,6 +43,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let {selstring} = options
+    
     var telShow = this.data.user.tel.slice(0, 3) + "****" + this.data.user.tel.slice(7)
     var i = this.data.user.email.indexOf("@")
     var emailShow = this.data.user.email[0] + "*****" + this.data.user.email.slice(i)

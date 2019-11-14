@@ -1,5 +1,5 @@
 <!--components/lesson-show2/lessonShow2.wxml-->
-<view  wx:for="{{lessonshow}}" wx:key="key" wx:for-index="iindex" wx:for-item="iitem">
+<view  wx:for="{{lessonShow}}" wx:key="key" wx:for-index="iindex" wx:for-item="iitem">
   <view class="lessonshow2Title">
     {{iitem.name}}
   </view>
@@ -7,10 +7,10 @@
     <view class="lessonshow2List">
       <view class= "lessonshow2Box" wx:for="{{iitem.info}}" wx:key="key">
 
-        <image src="{{item.lessonicon}}"></image>
-        <view class="lessonshow2Lessonname">{{item.lessonname}}
+        <image src="{{item.courseintroductionBreviarypictyre}}"></image>
+        <view class="lessonshow2Lessonname">{{item.courseintroductionNarrate}}
         </view>
-        <view class="lessonshow2Lessonteacher">{{item.lessonteacher}}
+        <view class="lessonshow2Lessonteacher">{{item.courseintroductionTeacher}}
         </view>
       </view>
     </view>

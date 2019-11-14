@@ -28,7 +28,7 @@ Page({
   },
   goAboutus: function(e) {
     wx.navigateTo({
-      url: '/pages/payment/payment',
+      url: '/pages/aboutus/aboutus',
     })
   },
   goWishes: function(e) {
