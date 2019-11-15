@@ -1,4 +1,4 @@
-<view class="lessonShow" wx:for="{{showitems}}" wx:key="{{index}}">
+<view class="lessonShow" wx:for="{{showitems}}" wx:key="key" bindtap="show">
   <image src="{{item.courseintroductionBreviarypictyre}}"></image>
   <view class="lessonInfo">
     <text class="showTitle">{{item.courseintroductionNarrate}}\n</text>

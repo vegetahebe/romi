@@ -16,9 +16,9 @@ Page({
 
   searchhotkeys: function(event) {
     let keywords = event.type == "confirm" ? event.detail.value : event.currentTarget.dataset.text
-
+  console.log(keywords)
     wx.navigateTo({
-      url: ` /pages/search-res/search-res?keyword=${keywords}`
+      url: `/pages/search-res/search-res?keywords=${keywords}`
     })
   }
 })

@@ -1,4 +1,9 @@
 // pages/payment/payment.js
+import {
+  BaseURL,
+  MediaURL
+} from '../../utils/util.js'
+const app = getApp()
 Page({
 
   /**
@@ -7,6 +12,9 @@ Page({
   data: {
     alipay: "/static/images/alipay.png",
     wechat: "/static/images/wechat.png",
+    selArr: [],
+    selLesson: [],
+    selstrin: "",
     telShow: "",
     emailShow: "",
     agreement: false,
@@ -21,45 +29,68 @@ Page({
       tel: "18628327727",
       email: "vegeta1213@126.com"
     },
-    lessoninfos: [{
-      lessonName: "Photoshop平面设计",
-      lessonDesc: "本课基于校企合作,依据岗位标准,采用项目教学模式针对广大转行及新入门同学量身定做",
-      lessonImage: "/static/images/paymentlesson.png",
-      lessonPrice: 3500
-    }, {
-      lessonName: "Photoshop平面设计",
-      lessonDesc: "本课基于校企合作,依据岗位标准,采用项目教学模式针对广大转行及新入门同学量身定做",
-      lessonImage: "/static/images/paymentlesson.png",
-      lessonPrice: 3500
-    }, {
-      lessonName: "Photoshop平面设计",
-      lessonDesc: "本课基于校企合作,依据岗位标准,采用项目教学模式针对广大转行及新入门同学量身定做",
-      lessonImage: "/static/images/paymentlesson.png",
-      lessonPrice: 3500
-    }]
+    lessoninfos: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let {selstring} = options
-    
+    let {
+      videoCode
+    } = options
+    var selArr = videoCode.split(",")
+    this.getVideoInfo(selArr)
     var telShow = this.data.user.tel.slice(0, 3) + "****" + this.data.user.tel.slice(7)
     var i = this.data.user.email.indexOf("@")
     var emailShow = this.data.user.email[0] + "*****" + this.data.user.email.slice(i)
-    var totalPrice = 0
-    this.data.lessoninfos.forEach(function(item, index) {
-      totalPrice += parseInt(item.lessonPrice)
-    })
     this.setData({
+      selArr: selArr,
       telShow: telShow,
       emailShow: emailShow,
-      totalPrice: totalPrice
     })
   },
+  getVideoInfo(selArr) {
+    let _this = getCurrentPages()[getCurrentPages().length - 1]
+    var lessoninfos = []
+    wx.request({
+      url: `${BaseURL}/getAllSuit`,
+      method: 'POST',
+      data: {
+        "content": _this.data.videoCode,
+        "parameter": "",
+        "statusode": app.globalData.username,
+      },
+      success: res => {
+        res.data.data.forEach(item => {
+          if (_this.data.selArr.indexOf(item.courseintroductionDistinction) != -1) {
+            item.courseintroductionBreviarypictyre = `${MediaURL}/` + item.courseintroductionBreviarypictyre
+            lessoninfos.push(item)
+          }
+        })
+        console.log(lessoninfos)
+        var totalPrice = 0
+        lessoninfos.forEach(function(item) {
+          totalPrice += parseInt(item.courseintroductionPrice)
+          console.log(item.courseintroductionPrice)
+        })
+        this.setData({
+          totalPrice: totalPrice,
+          lessoninfos: lessoninfos
+        })
+
+        _this.setData({
+          
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+
+  },
   isAgreement: function(e) {
-    var _this = getCurrentPages()[getCurrentPages().length-1]
+    var _this = getCurrentPages()[getCurrentPages().length - 1]
     _this.setData({
       agreement: (e.detail.value[0] == "agree"),
       canPay: (e.detail.value[0] == "agree" && _this.data.payWay)

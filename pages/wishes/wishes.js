@@ -131,14 +131,15 @@ Page({
   //结算
   paybill: function(e) {
     var _this = getCurrentPages()[getCurrentPages().length - 1]
-    var selitems = Array.from(_this.data.courseintroductionPrice, ({
+    console.log(_this.data)
+    var selitems = Array.from(_this.data.selLesson, ({
       courseintroductionDistinction
     }) => courseintroductionDistinction)
     var selstring = String(...[selitems])
     console.log(selstring)
     //发送数据 
     wx.navigateTo({
-      url: `/pages/payment/payment?${selstring}`,
+      url: `/pages/payment/payment?videoCode=${selstring}`,
     })
   },
 

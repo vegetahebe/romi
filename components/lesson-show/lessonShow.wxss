@@ -13,9 +13,10 @@ lessonShow {
 }
 
 .lessonShow image {
-  width: 120px;
-  height: 95px;
-  padding: 25rpx;
+ width: 210px;
+height: 95px;
+padding: 18rpx;
+
 }
 
 .lessonInfo {

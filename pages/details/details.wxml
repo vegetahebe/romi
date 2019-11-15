@@ -1,6 +1,6 @@
 <view class="container">
   <!-- 视频组件 -->
-  <video id="myVideo" initial-time="10" src="{{videoUrl}}" bindtimeupdate="bindtimeupdate" autoplay="true">
+  <video id="myVideo" initial-time="{{mylasttime}}" src="{{videoComment[videoSection].videoSite}}" bindtimeupdate="bindtimeupdate" autoplay="true">
   </video>
   <!-- 提醒购买 -->
   <!-- 弹框组件 -->
@@ -13,35 +13,35 @@
   <text class="detailTab {{profileComment ? 'detailsContectSel':''}}" bindtap="toggleProfilecomment">简介</text>
   <text class="detailTab {{!profileComment ? 'detailsContectSel':''}}" bindtap="toggleProfilecomment">评论</text>
   <text class="unpaied" wx:if="{{!videoPaied}}">试看1分钟 </text>
-  <text class="unpaied1" wx:if="{{!videoPaied}}" bindtap="goBuy">购买完整版</text>
-  <text class="unpaied1" wx:if="{{!videoPaied}}" bindtap="addWishes">加入心愿单</text>
-  <text class="unpaied" wx:if="{{continueLearn}}">上次学习到{{(mylasttime-(mylasttime%60))/60}}分{{mylasttime%60}}秒,为您继续播放</text>
+  <text class="unpaied1" wx:if="{{!videoPaied}}" bindtap="goBuy">购买 </text>
+  <text class="unpaied1" wx:if="{{!videoPaied}}" bindtap="addWishes">  加入心愿单</text>
+  <text class="unpaied" wx:if="{{mylasttime}}">上次学习到{{(mylasttime-(mylasttime%60))/60}}分{{mylasttime%60}}秒,为您继续播放</text>
 
 </view>
 
 <view class="profile" wx:if="{{profileComment}}">
   <view class="teacherBox">
-    <image class="teachericon" src="{{videoTeacher.teachericon}}"></image>
+    <image class="teachericon" src="{{teacherTables.teacherHeadportrait}}"></image>
     <view class="teacherinfoBox">
-      <view class="teacherName">{{videoTeacher.teachersubject}} {{videoTeacher.teachername}}</view>
+      <view class="teacherName">{{teacherTables.teachersubject}} {{teacherTables.teacherName}}</view>
       <view style="font-size:13px;font-weight:550;margin-bottom:5px;">教师简介:</view>
-      <view class="teacherinfo">{{videoTeacher.teacherinfo}}</view>
+      <view class="teacherinfo">{{teacherTables.teacherCharacteristics}}</view>
       <image class="studied" src="/static/images/studied.png"></image>
-      <text>{{lessonstudied}}</text>
+      <text>{{videoComment.videoWatchnumber}}</text>
     </view>
   </view>
   <view class="lessonBox">
     <text style="margin:10px;font-size:13px;line-height-18px;">视频教学</text>
     <text style="margin:10px;font-size:16px;font-weight:600">{{lessonUnit}}</text>
     <view class="lessonsectionBox">
-      <view class="lessonsection {{index+1 == videoSection ? 'lessonsectionSel':''}}" bindtap="jumplessonsection" wx:for="{{videoLesson}}" wx:key="key" data-index="{{index+1}}">第{{item.lessonSection}}课: {{item.lessonname}}</view>
+      <view class="lessonsection {{index == videoSection ? 'lessonsectionSel':''}}" bindtap="jumplessonsection" wx:for="{{videoComment}}" wx:key="key" data-index="{{index}}">{{item.videoChapter}}</view>
     </view>
   </view>
   <primer />
   <view>相关视频</view>
-  <lessonshow data-videos="{{recommonditions}} " />
+  <lessonShow showitems="{{recommenditions}}" />
 </view>
-<view class="comment" wx:if="{{!profileComment}}"  wx:for="{{videoComment}}" wx:key="key">
+<view class="comment" wx:if="{{!profileComment}}"  wx:for="{{userComment}}" wx:key="key">
   <view class="commenthead">
     <image src="{{item.usericon}}" class="commentUsericon"></image>
     <view class="commentTime ">{{item.time}}</view>

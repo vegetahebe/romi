@@ -4,12 +4,12 @@
 <view class="paylistBox">
   <view class="checkTitle">商品核对</view>
   <view class="paylist" wx:for="{{lessoninfos}}" wx:key="key">
-    <image src="{{item.lessonImage}}"></image>
+    <image src="{{item.courseintroductionBreviarypictyre}}"></image>
     <view class="iteminfos">
-      <view class="itemname">{{item.lessonName}}</view>
-      <view class="itemdesc">{{item.lessonDesc}}</view>
+      <view class="itemname">{{item.courseintroductionNarrate}}</view>
+      <view class="itemdesc">{{item.courseintroductionSummarize}}</view>
       <view class="itemprice">价格: ￥
-        <text>{{item.lessonPrice}}</text>
+        <text>{{item.courseintroductionPrice}}</text>
       </view>
     </view>
   </view>

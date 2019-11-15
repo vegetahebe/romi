@@ -1,7 +1,16 @@
 <!--pages/aboutus/aboutus.wxml-->
-<view class="container" style="height: 120px;">
-  <image src="/static/images/logo.png"></image>
-  <view style="margin: 40px;font-size: 14px;font-weight: 500;">成都芮米科技有限公司是由政府主导成立的专门从事移动互联网教育和互联网项目孵化服务的机构。通过“政府主导、高校承起、企业参与、市场运营”的模式，将移动互联培训、孵化基地建设和高校人才培养布局相结合，芮米互联网孵化基地是集互联网培训、项目孵化和企业助推于一体的互联网孵化平台，最终实现“培养一批学生，孵化一批项目，助推一批企业”的总体目标 。 在整合芮米集团旗下移动安全、移动企业、移动医疗和移动娱乐四大平台资源的基础上，秉承“全球视野、接轨国际、与产业零距离”的教育理念，为全国学院、大学生和有志从事移动互联产业的年轻人，提供iOS高级开发人才培养、软件测试人才培养、JAVA开发人才、UI设计人才、Web前端企业订制人才培养、就业服务、课程体系输出、移动互联实验室搭建等优质服务和体验。
-    成都芮米科技有限公司自成立之初起，始终以推动国内移动互联行业发展为己任，用良心作教育，以“做受尊敬的培训机构”为遵旨，致力于打造集国内高级IT开发人才培养、就业服务、课程体系输出为一体的专业教育品牌。
+<view style="text-algin:center">
+  <image src="/static/images/aboutus.png"></image>
+  <view class="text">官方网站
+    <text>www.ruimi.com</text>
+  </view>
+  <view class="text">微信公众号
+    <text>@芮米课堂</text>
+  </view>
+  <view class="text">芮米课堂
+    <text>@芮米课堂</text>
+  </view>
+  <view class="text">检查新版本
+    <text>V4.2.1</text>
   </view>
 </view>

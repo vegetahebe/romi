@@ -28,5 +28,5 @@
     <view class="aboutus" bindtap="goSecurity">安全中心</view>
     <view class="aboutus" bindtap="goAboutus">关于我们</view>
   </view>
-  <view class="logout">注销登录</view>
+  <view class="logout" bindtap="logout">注销登录</view>
 </view>

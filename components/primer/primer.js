@@ -16,7 +16,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    hotlesson: "WEB",
+    hotlesson: "A301C3651657",
     src: `${MediaURL}/group1/M00/00/00/CgIFIl3MvnaASCR9AACWYzNy29o229.png`
   },
 

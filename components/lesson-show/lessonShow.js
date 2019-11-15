@@ -32,5 +32,8 @@ Component({
         url: `/pages/details/details?videoCode=${videoCode}`,
       })
     },
+    show(){
+      this.data.showitems
+    }
   }
 })

@@ -16,15 +16,20 @@ page {
 }
 
 .wishesBox {
-  width: Inherit;
-  display: grid;
+  width: 375px;
+  display: flex;
+  flex-wrap: wrap;
+  /* display: grid;
   grid-template-columns: repeat(2, 48%);
-  grid-gap: 10px;
+  grid-gap: 10px; */
 }
 
 .wishesItems {
+  display: block;
+  height: 250px;
+  width: 160px;
   background: white;
-  margin: 5 auto;
+  margin: 5px auto;
   text-align: center;
   padding:10px;
   border-radius: 10px;

@@ -94,6 +94,15 @@ Page({
       fail: function(res) {}
     })
   },
+ logout:function () {
+    wx.showLoading({ title: '退出登陆中' })
+    const token = wx.getStorageSync('token')
+    Api.logout({ token: token }).then(data => {
+      wx.hideLoading()
+      wx.removeStorageSync('token')
+      refreshPageData()
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成F
    */

@@ -24,7 +24,6 @@ Page({
       verification: "",
       courseintroductionType: '精品'
     }).then(res => {
-      console.log(res)
       res[0].forEach((item) => {
         item.courseintroductionBreviarypictyre = MediaURL + "/" + item.courseintroductionBreviarypictyre
       })
@@ -72,7 +71,6 @@ Page({
         this.setData({
           lessonShow: lessonShow
         })
-        console.log(this.data.lessonShow)
       });
     })
   }

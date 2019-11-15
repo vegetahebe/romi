@@ -32,7 +32,7 @@ App({
     })
   },
   globalData: {
-    username: "UrO5VIDsYf0P7S70k9zPP7ZkHf3sXxM+fZqIaxjEWPg=, XN6zUlSsYacA1crhS2D/Km6/Px9cMkoAqdPu + VPX00s=",
+    username: "",
     userInfo: null,
     data: {},
   }
